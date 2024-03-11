@@ -11,9 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('comentables', function (Blueprint $table) {
+        Schema::create('commentables', function (Blueprint $table) {
             $table->id();
-            $table->morphs('commentable');
+            $table->foreignId('user_id');
+            $table->uuidMorphs('commentable');
             $table->text('content');
             $table->timestamps();
         });
