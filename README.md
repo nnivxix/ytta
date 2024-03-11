@@ -2,7 +2,6 @@
 
 This repository aims to learn Polymorphic relationships in Laravel. In this repository there are `Video, Post, Comment` **(Polymorphic)** models.
 
-
 ## Usage using `tinker`
 
 ### Open tinker
@@ -24,8 +23,6 @@ $user->posts()->create([
 ]);
 ```
 
-
-
 ```bash
 $post = $user->posts()->find('uuid');
 ```
@@ -46,3 +43,8 @@ $post->comments;
 ```
 
 
+## References
+
+- [Polymorphic Relationships - Laravel Documentation](https://laravel.com/docs/10.x/eloquent-relationships#polymorphic-relationships)
+- [Enforcing Morph Maps in Laravel - Laravel News](https://laravel-news.com/enforcing-morph-maps-in-laravel)
+- [Polymorphic relationships in Laravel and their use cases - Blog/Log Rocket](https://blog.logrocket.com/polymorphic-relationships-laravel/)
