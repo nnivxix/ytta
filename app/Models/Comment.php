@@ -9,8 +9,6 @@ class Comment extends Model
 {
     use HasFactory;
 
-    protected $table = 'commentables';
-
     public function commentable()
     {
         return $this->morphTo();
