@@ -8,6 +8,7 @@ use function Laravel\Prompts\text;
 
 class HaloCommand extends Command
 {
+
     protected $signature = 'app:halo';
 
     protected $description = 'Command description';
