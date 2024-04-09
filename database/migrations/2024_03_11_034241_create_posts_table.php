@@ -15,6 +15,7 @@ return new class extends Migration
             $table->uuid('id');
             $table->foreignId('user_id');
             $table->string('title')->nullable();
+            $table->string('path_image')->nullable();
             $table->text('content')->nullable();
             $table->boolean('is_public')->default(true);
             $table->timestamps();

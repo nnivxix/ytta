@@ -13,14 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'home');
+Route::view('/', 'home')
+    ->name('home');
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
 
-Route::view('profile', 'profile')
-    ->middleware(['auth'])
-    ->name('profile');
+Route::middleware('auth')->group(function () {
+    Route::view('profile', 'profile')
+        ->name('profile');
+
+    Route::view('post/create', 'post.create')
+        ->name('post.create');
+});
 
 require __DIR__ . '/auth.php';

@@ -12,6 +12,10 @@ class Post extends Model
     use HasFactory;
     use HasUuids;
 
+    protected $casts = [
+        'is_public' => 'boolean'
+    ];
+
     public function comments(): MorphMany
     {
         return $this->morphMany(Comment::class, 'commentable');
