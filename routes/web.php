@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,8 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'home')
-    ->name('home');
+Route::view('/', 'home', [
+    'posts' => Post::query()->latest()->limit(9)->get()
+])->name('home');
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
@@ -24,7 +26,7 @@ Route::middleware('auth')->group(function () {
     Route::view('profile', 'profile')
         ->name('profile');
 
-    Route::view('post/create', 'post.create')
+    Route::view('post/create', 'post.create',)
         ->name('post.create');
 });
 

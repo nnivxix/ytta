@@ -1,10 +1,11 @@
 <section>
     {{-- Do your work, then step back. --}}
+    <h1 class="dark:text-white font-semibold text-2xl">Create Post</h1>
     <form wire:submit.prevent="submit" class="mt-6 space-y-6" enctype="multipart/form-data">
         <div>
             <x-input-label for="content" :value="__('Content')" />
-            <textarea wire:model="content" id="content" name="content" type="text" class="mt-1 block w-full" autofocus
-                autocomplete="content">
+            <textarea wire:model="content" id="content" name="content" type="text"
+                class="mt-1 block w-full rounded-lg dark:bg-gray-900 dark:text-white" autofocus autocomplete="content">
             </textarea>
             <x-input-error class="mt-2" :messages="$errors->get('content')" />
         </div>

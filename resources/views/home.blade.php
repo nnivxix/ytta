@@ -23,14 +23,10 @@
         @endif
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-9">
-            <livewire:components.card />
-            <livewire:components.card />
-            <livewire:components.card />
-            <livewire:components.card />
-            <livewire:components.card />
-            <livewire:components.card />
-            <livewire:components.card />
-            <livewire:components.card />
+            {{-- @dd($posts) --}}
+            @foreach ($posts as $post)
+            <x-card :post="$post" />
+            @endforeach
         </div>
     </div>
 </body>
